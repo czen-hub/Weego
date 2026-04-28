@@ -1189,6 +1189,13 @@ section { padding: 80px 0; }
   .ptr-amount  { text-align: left; }
   .super-vet-card { flex-direction: column; }
 
+  /* Index compare table */
+  .uber-compare h2 { font-size: 26px; }
+  .uber-compare .sub { font-size: 15px; margin-bottom: 30px; }
+  .compare-table { font-size: 14px; }
+  .compare-table th { padding: 12px 16px; }
+  .compare-table td { padding: 12px 16px; }
+
   /* Services */
   .service-primary-grid { grid-template-columns: 1fr; }
   .av-timeline { border-radius: 12px; }
@@ -1243,6 +1250,14 @@ section { padding: 80px 0; }
   .alt-contact-grid   { grid-template-columns: 1fr; }
   .faq-quick-links    { flex-direction: column; align-items: center; }
   .faq-quick-link     { width: 100%; justify-content: center; }
+
+  /* Index compare table — horizontal scroll on small phones */
+  .compare-wrapper { overflow-x: auto; }
+  .compare-table { font-size: 12px; min-width: 440px; }
+  .compare-table th { padding: 10px 10px; font-size: 10px; letter-spacing: 0.5px; }
+  .compare-table td { padding: 10px 10px; }
+  .uber-compare h2 { font-size: 22px; }
+  .uber-compare .sub { font-size: 13px; margin-bottom: 20px; }
 
   .compare-row    { grid-template-columns: 1fr; }
   .pension-grid   { grid-template-columns: repeat(2, 1fr); }
