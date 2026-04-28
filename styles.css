@@ -1226,17 +1226,17 @@ section { padding: 80px 0; }
 /* Small phones — 480px */
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .feature-grid { grid-template-columns: 1fr 1fr; }
+  .feature-grid { grid-template-columns: 1fr; }
   .footer-grid  { grid-template-columns: 1fr 1fr; }
   .roadmap-grid { grid-template-columns: 1fr; }
   .locale-info  { flex-direction: column; gap: 4px; }
   .hero { padding: 40px 0 48px; }
   .hero-content h2 { font-size: 26px; }
 
-  .governance-grid { grid-template-columns: 1fr 1fr; }
+  .governance-grid { grid-template-columns: 1fr; }
   .benefits-grid   { grid-template-columns: 1fr; }
   .ladder-totals   { grid-template-columns: 1fr 1fr; }
-  .hub-grid        { grid-template-columns: 1fr 1fr; }
+  .hub-grid        { grid-template-columns: 1fr; }
   .corporate-grid  { grid-template-columns: 1fr; }
 
   .requirements-grid  { grid-template-columns: 1fr; }
