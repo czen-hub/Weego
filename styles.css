@@ -226,8 +226,8 @@
   --primary-muted: var(--brand-tint);
   --dark:          var(--surface-dark);
   --dark-mid:      var(--surface-dark-mid);
-  --white:         var(--_slate-0);
-  --off-white:     var(--_slate-50);
+  --white:         var(--surface-raised);
+  --off-white:     var(--surface-sunken);
   --border:        var(--border-ui);
   --text:          var(--fg-default);
   --text-soft:     var(--fg-soft);
@@ -349,6 +349,38 @@ header .cta:hover {
 .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── THEME TOGGLE ────────────────────────────────────────────── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-ui);
+  background: transparent;
+  color: var(--fg-soft);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.theme-toggle:hover {
+  background: var(--surface-muted);
+  color: var(--fg-default);
+  border-color: var(--border-strong);
+}
+/* Light mode: moon visible (click → go dark) */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+/* Dark mode JS toggle: sun visible (click → go light) */
+[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+/* Dark mode OS preference: sun visible */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun  { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+}
 
 /* ── HERO ────────────────────────────────────────────────────── */
 .hero {
