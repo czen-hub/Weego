@@ -1251,13 +1251,21 @@ section { padding: 80px 0; }
   .faq-quick-links    { flex-direction: column; align-items: center; }
   .faq-quick-link     { width: 100%; justify-content: center; }
 
-  /* Index compare table — horizontal scroll on small phones */
-  .compare-wrapper { overflow-x: auto; }
-  .compare-table { font-size: 12px; min-width: 440px; }
-  .compare-table th { padding: 10px 10px; font-size: 10px; letter-spacing: 0.5px; }
-  .compare-table td { padding: 10px 10px; }
+  /* Index compare table — card layout on small phones */
   .uber-compare h2 { font-size: 22px; }
   .uber-compare .sub { font-size: 13px; margin-bottom: 20px; }
+  .compare-wrapper { overflow: visible; border: none; box-shadow: none; border-radius: 0; background: transparent; }
+  .compare-table, .compare-table tbody { display: block; width: 100%; }
+  .compare-table thead { display: none; }
+  .compare-table tr { display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 10px; border: 1px solid #e0e6ed; border-radius: 12px; overflow: hidden; }
+  .compare-table .hl { background: transparent; }
+  .compare-table td { display: block; padding: 10px 12px; border-bottom: none; font-size: 13px; }
+  .compare-table td:first-child { grid-column: 1 / -1; background: #f1f5f9; color: var(--dark); font-size: 12px; font-weight: 700; border-bottom: 1px solid #e0e6ed; }
+  .compare-table td:nth-child(2) { font-size: 12px; background: #fff; }
+  .compare-table td:nth-child(3) { font-size: 12px; background: #fff; border-left: 1px solid #e0e6ed; }
+  .compare-table .hl td:nth-child(2), .compare-table .hl td:nth-child(3) { background: #f0f7ff; }
+  .compare-table td:nth-child(2)::before { content: "Uber / Lyft"; display: block; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #999; margin-bottom: 4px; }
+  .compare-table td:nth-child(3)::before { content: "WeGo"; display: block; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); margin-bottom: 4px; }
 
   .compare-row    { grid-template-columns: 1fr; }
   .pension-grid   { grid-template-columns: repeat(2, 1fr); }
