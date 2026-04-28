@@ -1205,12 +1205,15 @@ section { padding: 80px 0; }
   .calc-body   { padding: 40px 0 56px; }
   .calc-inputs { padding: 24px 20px; border-radius: 18px; }
   .breakdown-card, .pension-card, .lifetime-card, .calc-cta-row { padding: 20px 16px; }
-  .advantage-banner { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .advantage-banner { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px 22px; }
   .advantage-banner > div { text-align: left !important; }
-  .advantage-banner .adv-value { font-size: 28px; }
-  .acc-cards { flex-direction: column; }
-  .acc-vs { align-self: center; }
-  .acc-amount { font-size: 30px; }
+  .advantage-banner .adv-label { font-size: 11px; }
+  .advantage-banner .adv-value { font-size: 26px; }
+  .advantage-banner .adv-sub   { font-size: 13px; }
+  .annual-comp-compare { padding: 20px 18px 18px; border-radius: 16px; }
+  .acc-amount { font-size: 26px; letter-spacing: -1px; }
+  .acc-diff-amount { font-size: 22px; }
+  .acc-diff-label  { font-size: 13px; }
 
   /* Footer */
   .footer-brand { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -1256,6 +1259,16 @@ section { padding: 80px 0; }
   .earn-card .earn-amount { font-size: 28px; }
   .calc-cta-row { flex-direction: column; text-align: center; }
   .calc-cta-row .cta-btn { width: 100%; justify-content: center; }
+  .annual-comp-compare { padding: 16px 14px 14px; border-radius: 14px; background-color: #0f172a; }
+  .acc-cards { gap: 8px; }
+  .acc-card  { padding: 14px 12px; border-radius: 10px; }
+  .acc-platform  { font-size: 10px; letter-spacing: 0.5px; }
+  .acc-amount    { font-size: 20px; letter-spacing: -0.5px; }
+  .acc-label     { font-size: 11px; }
+  .acc-vs        { font-size: 11px; flex-shrink: 0; }
+  .acc-diff      { padding: 10px 12px; gap: 8px; border-radius: 8px; }
+  .acc-diff-amount { font-size: 18px; }
+  .acc-diff-label  { font-size: 12px; }
 }
 
 /* Very small — 380px */
