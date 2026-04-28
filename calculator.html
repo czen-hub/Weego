@@ -190,8 +190,8 @@
                     <div class="input-toggle-row">
                         <div>
                             <div class="toggle-label">Include gas station savings</div>
-                            <div class="toggle-sub calc-tip" id="gas-savings-lbl">~$720/yr saved for member-owners ⓘ</div>
-                            <div class="toggle-sub gas-spend-line" id="gas-spend-lbl">Total gas spend at co-op price: ~$6,552/yr</div>
+                            <div class="toggle-sub calc-tip" id="gas-savings-lbl">~$720/yr savings ⓘ</div>
+                            <div class="toggle-sub gas-spend-line" id="gas-spend-lbl">Total gas spend: ~$6,552/yr</div>
                         </div>
                         <label class="toggle-switch">
                             <input type="checkbox" id="tog-gas" onchange="update()">
@@ -263,14 +263,31 @@
                             <div class="adv-sub" id="res-adv-sub">Per month more in your pocket</div>
                         </div>
                         <div style="text-align:right;">
-                            <div class="adv-label">Annual advantage</div>
-                            <div class="adv-value" id="res-annual-adv">+$0</div>
-                            <div class="adv-sub">Per year vs Uber/Lyft</div>
-                        </div>
-                        <div style="text-align:right;">
                             <div class="adv-label">$/hr active (WeGo)</div>
                             <div class="adv-value" id="res-hourly">$0</div>
                             <div class="adv-sub">vs <span id="res-hourly-uber">$0</span>/hr Uber</div>
+                        </div>
+                    </div>
+
+                    <!-- 12-Month Total Compensation -->
+                    <div class="annual-comp-compare">
+                        <div class="acc-header">12-Month Total Compensation</div>
+                        <div class="acc-cards">
+                            <div class="acc-card acc-uber">
+                                <div class="acc-platform">✕ Uber / Lyft</div>
+                                <div class="acc-amount" id="acc-uber-total">$0</div>
+                                <div class="acc-label">You keep per year</div>
+                            </div>
+                            <div class="acc-vs">VS</div>
+                            <div class="acc-card acc-wego">
+                                <div class="acc-platform">✓ WeGo Cooperative</div>
+                                <div class="acc-amount" id="acc-wego-total">$0</div>
+                                <div class="acc-label">You keep per year</div>
+                            </div>
+                        </div>
+                        <div class="acc-diff">
+                            <span class="acc-diff-amount" id="acc-diff-amount">+$0</span>
+                            <span class="acc-diff-label">more per year with WeGo</span>
                         </div>
                     </div>
 
@@ -622,9 +639,9 @@ function update() {
     const gasCoopPrice  = gasPriceBay - GAS_COOP_DISCOUNT;
     const gasTotalSpend = Math.round(gasCoopPrice * gasGallonsYr);
     const gasLbl = document.getElementById('gas-savings-lbl');
-    gasLbl.textContent = '~$' + gasAnnual.toLocaleString() + '/yr saved for member-owners ⓘ';
-    gasLbl.dataset.tip = `$${gasPriceBay.toFixed(2)} pump − $${gasCoopPrice.toFixed(2)} co-op = $${GAS_COOP_DISCOUNT.toFixed(2)}/gal × ${Math.round(gasGallonsYr).toLocaleString()} gal/yr (${gasMilesWk} mi/wk ÷ ${gasMpg} MPG × 52)`;
-    document.getElementById('gas-spend-lbl').textContent = 'Total gas spend at co-op price: ~$' + gasTotalSpend.toLocaleString() + '/yr';
+    gasLbl.textContent = '~$' + gasAnnual.toLocaleString() + '/yr savings ⓘ';
+    gasLbl.dataset.tip = `$${gasPriceBay.toFixed(2)} pump − $${gasCoopPrice.toFixed(2)} co-op = $${GAS_COOP_DISCOUNT.toFixed(2)}/gal × ${Math.round(gasGallonsYr).toLocaleString()} gal/yr`;
+    document.getElementById('gas-spend-lbl').textContent = 'Total gas spend: ~$' + gasTotalSpend.toLocaleString() + '/yr';
 
     // Sync earn↔fares only in weekly mode (rides mode derives gross differently)
     if (calcMode === 'weekly') syncFaresToEarn(weeklyGross);
@@ -680,7 +697,6 @@ function update() {
 
     // Advantage banner
     document.getElementById('res-monthly-adv').textContent = sign(monthlyAdv) + fmt(monthlyAdv);
-    document.getElementById('res-annual-adv').textContent  = sign(annualAdv)  + fmt(annualAdv);
     document.getElementById('res-adv-sub').textContent     = 'Per month more in your pocket';
     document.getElementById('res-hourly').textContent      = '$' + wegoHourly.toFixed(2);
     document.getElementById('res-hourly-uber').textContent = '$' + uberHourly.toFixed(2);
@@ -740,6 +756,12 @@ function update() {
         noteText = `🎉 Full pension unlocked! At ${driveYears} years you retire with $${Math.round(pensionAmt).toLocaleString()}/month for life, funded by the cooperative's AV fleet. You've invested $${totalInvested.toLocaleString()} total — and will receive $600,000+ over 20 years of retirement.`;
     }
     document.getElementById('pension-note').textContent = noteText;
+
+    // ── 12-MONTH COMP COMPARISON ──
+    document.getElementById('acc-uber-total').textContent = fmt(uberWeekly * 52);
+    document.getElementById('acc-wego-total').textContent = fmt(wegoWeekly * 52);
+    const annualCompDiff = (wegoWeekly - uberWeekly) * 52;
+    document.getElementById('acc-diff-amount').textContent = sign(annualCompDiff) + fmt(Math.abs(annualCompDiff));
 
     // ── LIFETIME COMPARISON ──
     const ltYears = driveYears;
