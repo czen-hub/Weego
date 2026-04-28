@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <link rel="dns-prefetch" href="//www.instagram.com">
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
+    <script>(function(){var t=localStorage.getItem("wego-theme");if(t)document.documentElement.setAttribute("data-theme",t);}());</script>
 </head>
 <body>
 
@@ -57,7 +58,7 @@
             <div class="service-primary-grid">
 
                 <!-- Standard Rides -->
-                <div class="service-primary-card">
+                <div class="service-primary-card" id="local">
                     <div class="spc-banner standard">
                         <div class="spc-icon">🚗</div>
                         <h3>WeGo Standard</h3>
@@ -75,7 +76,7 @@
                 </div>
 
                 <!-- Medical Logistics -->
-                <div class="service-primary-card">
+                <div class="service-primary-card" id="medical">
                     <div class="spc-banner medical">
                         <div class="spc-icon">🏥</div>
                         <h3>Medical Logistics</h3>
@@ -93,7 +94,7 @@
                 </div>
 
                 <!-- School Transport -->
-                <div class="service-primary-card">
+                <div class="service-primary-card" id="school">
                     <div class="spc-banner school">
                         <div class="spc-icon">🎒</div>
                         <h3>Secure School Transport</h3>
@@ -172,7 +173,7 @@
     </section>
 
     <!-- ── SECTION 3: CORPORATE ── -->
-    <section class="sect-dark">
+    <section class="sect-dark" id="corporate">
         <div class="container">
             <div class="section-eyebrow">For Businesses</div>
             <h2 class="page-section-title">Corporate Accounts &amp;<br>Fleet Programs.</h2>
@@ -353,7 +354,7 @@
                 <h4>The Cooperative</h4>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="features.html">The 15% Model</a></li>
+                    <li><a href="features.html">The 12% Model</a></li>
                     <li><a href="faq.html">Driver FAQ</a></li>
                     <li><a href="contact.html">Careers</a></li>
                 </ul>
@@ -361,10 +362,10 @@
             <div class="footer-col">
                 <h4>Our Services</h4>
                 <ul>
-                    <li><a href="services.html">Local Rides</a></li>
-                    <li><a href="services.html">Secure School Transport</a></li>
-                    <li><a href="services.html">Medical Logistics</a></li>
-                    <li><a href="services.html">Corporate Accounts</a></li>
+                    <li><a href="services.html#local">Local Rides</a></li>
+                    <li><a href="services.html#school">Secure School Transport</a></li>
+                    <li><a href="services.html#medical">Medical Logistics</a></li>
+                    <li><a href="services.html#corporate">Corporate Accounts</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -372,13 +373,13 @@
                 <ul>
                     <li><a href="faq.html">Driver FAQ</a></li>
                     <li><a href="calculator.html">Earnings Calculator</a></li>
-                    <li><a href="features.html">Pension Details</a></li>
+                    <li><a href="faq.html#pension">Pension Details</a></li>
                     <li><a href="contact.html">Join the Waitlist</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-apps">
-            <span style="font-size:14px; color:#aaa; padding:8px 0; display:block;">📱 App launching with the Bay Area rollout — join the waitlist to be notified first.</span>
+            <span style="font-size:14px; color:var(--text-dim); padding:8px 0; display:block;">📱 App launching with the Bay Area rollout — join the waitlist to be notified first.</span>
         </div>
         <div class="footer-meta">
             <div class="meta-left">
