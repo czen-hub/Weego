@@ -397,9 +397,6 @@ section { padding: 80px 0; }
   border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
 }
-.store-badge img { height: 40px; width: auto; opacity: 0.75; transition: opacity var(--transition); }
-.store-badge:hover img { opacity: 1; }
-
 .footer-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
 .meta-left { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 
@@ -413,13 +410,6 @@ section { padding: 80px 0; }
 .meta-right a { font-size: 13px; color: rgba(255,255,255,0.35); transition: color var(--transition); }
 .meta-right a:hover { color: rgba(255,255,255,0.7); }
 .copyright { font-size: 13px; color: rgba(255,255,255,0.25); width: 100%; margin-top: 8px; }
-
-/* ── CONTACT FORM WRAP (calculator page sidebar) ─────────────── */
-.contact-form-wrap {
-  background: var(--off-white); border: 1px solid var(--border);
-  border-radius: var(--radius-xl); padding: 48px; max-width: 560px;
-}
-.contact-form-wrap h3 { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 28px; }
 
 .form-group { margin-bottom: 20px; }
 .form-group label { display: block; font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
@@ -447,7 +437,6 @@ section { padding: 80px 0; }
 .text-red     { color: var(--red); }
 .text-soft    { color: var(--text-soft); }
 .text-center  { text-align: center; }
-.font-mono    { font-family: 'Courier New', monospace; }
 .fw-bold      { font-weight: 700; }
 .fw-black     { font-weight: 900; }
 
@@ -1257,7 +1246,6 @@ section { padding: 80px 0; }
   .footer-meta  { flex-direction: column; align-items: flex-start; gap: 16px; }
   .meta-right   { flex-direction: column; align-items: flex-start; gap: 10px; }
 
-  .contact-form-wrap { padding: 24px 20px; }
 }
 
 /* Small phones — 480px */
