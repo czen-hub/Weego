@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver FAQ — WeGo Cooperative</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faq-hero { background: linear-gradient(135deg, var(--dark) 0%, #0033a0 100%); }
+
+        .faq-body { padding:80px 0; background:var(--white); }
+        .faq-body .container { max-width:860px; }
+
+        .faq-section { margin-bottom:64px; }
+        .faq-section-title {
+            font-size:13px; font-weight:700; text-transform:uppercase;
+            letter-spacing:2px; color:var(--primary);
+            margin-bottom:28px; padding-bottom:12px;
+            border-bottom:2px solid #e8f0ff;
+        }
+
+        .faq-item { margin-bottom:4px; }
+        .faq-question {
+            width:100%; text-align:left; background:none; border:none;
+            padding:20px 0; font-size:18px; font-weight:700;
+            color:var(--dark); cursor:pointer;
+            display:flex; justify-content:space-between; align-items:center;
+            border-bottom:1px solid #f0f0f0;
+            font-family:inherit; line-height:1.4;
+            transition:color 0.2s;
+        }
+        .faq-question:hover { color:var(--primary); }
+        .faq-question .chevron {
+            width:24px; height:24px; flex-shrink:0; margin-left:20px;
+            transition:transform 0.3s; color:var(--primary);
+        }
+        .faq-question.open .chevron { transform:rotate(180deg); }
+        .faq-answer {
+            overflow:hidden; max-height:0;
+            transition:max-height 0.4s ease, padding 0.3s;
+            padding:0 0 0 0;
+        }
+        .faq-answer.open {
+            max-height:800px;
+            padding:0 0 24px 0;
+        }
+        .faq-answer p {
+            font-size:16px; line-height:1.85; color:#555;
+            margin-bottom:14px;
+        }
+        .faq-answer p:last-child { margin-bottom:0; }
+        .faq-answer ul {
+            font-size:16px; line-height:1.85; color:#555;
+            padding-left:20px; margin-bottom:14px;
+        }
+        .faq-answer ul li { margin-bottom:6px; }
+        .faq-answer strong { color:var(--dark); }
+        .faq-answer .highlight-box {
+            background:#f0f7ff; border-left:4px solid var(--primary);
+            border-radius:0 8px 8px 0; padding:16px 20px;
+            margin:16px 0; font-size:15px; color:#333; line-height:1.7;
+        }
+        .faq-answer .data-row {
+            display:flex; justify-content:space-between; align-items:center;
+            padding:10px 0; border-bottom:1px solid #f0f0f0; font-size:15px;
+        }
+        .faq-answer .data-row:last-child { border-bottom:none; }
+        .faq-answer .data-row .label { color:#666; }
+        .faq-answer .data-row .value { font-weight:700; color:var(--dark); }
+        .faq-answer .data-row .value.green { color:#27ae60; }
+        .faq-answer .data-row .value.red { color:#c0392b; }
+
+        .faq-cta { padding:80px 0; background:linear-gradient(135deg, var(--primary) 0%, #0033a0 100%); text-align:center; color:var(--white); }
+        .faq-cta h2 { font-size:34px; margin-bottom:20px; }
+        .faq-cta p { font-size:18px; max-width:600px; margin:0 auto 36px; line-height:1.8; opacity:0.9; }
+        .btn-white { display:inline-block; background:var(--white); color:var(--primary); padding:16px 40px; border-radius:100px; font-size:17px; font-weight:700; text-decoration:none; transition:transform 0.2s; }
+        .btn-white:hover { transform:translateY(-2px); }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1 class="logo"><a href="index.html">WeGo</a></h1>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('header').classList.toggle('nav-open'); this.classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>            
+        </nav>
+        <a href="contact.html" class="cta">Drive &amp; Own</a>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero faq-hero">
+        <div class="container hero-content">
+            <h2>Frequently Asked Questions</h2>
+            <p>Real answers about how WeGo works — the fees, the pension, the insurance, and the plan. No fluff.</p>
+        </div>
+    </section>
+
+    <!-- FAQ BODY -->
+    <section class="faq-body">
+        <div class="container">
+
+            <!-- SECTION 1: MEMBERSHIP & FEES -->
+            <div class="faq-section">
+                <div class="faq-section-title">Section 1 — Membership &amp; Fees</div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        What does it cost to join WeGo?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>There are two costs: a one-time founding membership fee of <strong>$500</strong>, payable over 12 months ($41.67/month), and a <strong>$75/month</strong> membership due that covers your commercial insurance, app infrastructure, and seeds your retirement trust.</p>
+                        <p>The $500 is your cooperative share — it buys you ownership, voting rights, and your founding member status. It is not a deposit that gets refunded; it is your entry into the company. The $75/month replaces what Uber silently keeps from your fares every single day.</p>
+                        <div class="highlight-box">
+                            <strong>The math:</strong> A typical Uber driver doing $5,000/month in gross fares pays Uber ~$2,750 in platform fees (55%). A WeGo member doing the same volume pays $600 in fees (12% tech + $75 membership). That's <strong>$2,150 more in your pocket every month</strong>.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        Does the membership fee ever go down?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. The annual registration fee follows the <strong>Loyalty Ladder</strong> — it decreases every year you stay as a member, rewarding tenure:</p>
+                        <div class="data-row"><span class="label">Year 1</span><span class="value">$500</span></div>
+                        <div class="data-row"><span class="label">Year 2</span><span class="value">$400</span></div>
+                        <div class="data-row"><span class="label">Year 3</span><span class="value">$300</span></div>
+                        <div class="data-row"><span class="label">Year 4</span><span class="value">$200</span></div>
+                        <div class="data-row"><span class="label">Year 5</span><span class="value">$100</span></div>
+                        <div class="data-row"><span class="label">Year 6</span><span class="value">$50</span></div>
+                        <div class="data-row"><span class="label">Year 7+</span><span class="value green">$25 (Forever)</span></div>
+                        <p style="margin-top:14px;">The monthly $75 dues are separate and remain steady — adjusted annually by the Consumer Price Index (CPI) to protect the retirement trust from inflation. If you leave and rejoin, you restart at $500, not at the level you left. This creates a powerful incentive to stay.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        What does the $75/month actually pay for?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your $75/month is allocated across four functions:</p>
+                        <div class="data-row"><span class="label">Commercial Insurance (all ride periods)</span><span class="value">$20</span></div>
+                        <div class="data-row"><span class="label">App infrastructure &amp; technology</span><span class="value">$15</span></div>
+                        <div class="data-row"><span class="label">Retirement Trust (the pension fund)</span><span class="value">$25</span></div>
+                        <div class="data-row"><span class="label">Operations reserve</span><span class="value">$10</span></div>
+                        <div class="data-row"><span class="label">Surplus — distributed as dividend</span><span class="value green">$5</span></div>
+                        <p style="margin-top:14px;">The retirement trust portion is legally protected in a separate trust account — it cannot be used for operating expenses, marketing, or any other business purpose. It is yours.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        Is there a minimum number of rides I need to do each month?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>No minimum ride requirement.</strong> The monthly fee is your commitment — not a ride quota. This is one of the key ways WeGo differs from Uber's model. You pay $75/month and drive as much or as little as your schedule allows.</p>
+                        <p>For context: if you do just 9 rides per month at an average $30 fare, the math already favors WeGo over Uber. Every ride beyond that is a gain on top.</p>
+                        <p>If you need to pause driving (illness, family, off-season), you may pause your membership for up to 3 months per year while preserving your vesting progress and cooperative shares. The $75/month is not charged during an approved pause.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        Can I drive for Uber or Lyft while also being a WeGo member?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Yes, absolutely.</strong> We encourage a dual-app approach especially in the early phase before the WeGo app is fully live in your market. You do not need to abandon your current income to join the cooperative. Your membership gives you benefits, ownership, and vesting progress regardless of which app you're driving on at any given moment.</p>
+                        <p>Many of our founding members continue to drive on Uber while the WeGo network builds, then shift more rides to WeGo as our volume grows. We want you financially secure throughout the transition — not forced to make a risky all-or-nothing jump.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: THE 20-YEAR PENSION -->
+            <div class="faq-section">
+                <div class="faq-section-title">Section 2 — The 20-Year Driver's Pension</div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        How exactly does the ~$2,500/month pension work?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The Driver's Legacy Fund is a pension program modeled after the military's 20-year service retirement. A driver who joins in 2026 and completes 20 years of active membership by 2046 becomes eligible for <strong>~$2,500/month for the rest of their life</strong>.</p>
+                        <p>The funding source is the cooperative's Autonomous Vehicle fleet. By Year 10, WeGo will own 50,000 AVs through the Retirement Trust. Each AV generates approximately $4,000–$6,000 in net monthly profit. A portion of that income is assigned to each vested retiree — meaning the robots do the work, and the human who built the company collects the check.</p>
+                        <div class="highlight-box">
+                            <strong>The math:</strong> A driver who starts at 25, drives for 20 years, and retires at 45 invests roughly $22,500 total (fees over 20 years). They then receive ~$2,500/month — $600,000 over the next 20 years, and continuing for life. That's a 2,600%+ return on their total investment.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        What if I retire before age 60? Can I still collect?
+                        <svg class="chevron" viewBox="0 0f 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The pension is based on <strong>20 years of service membership</strong>, not age. If you join at 25 and complete 20 years, you are eligible at 45. The cooperative operates on the Army Model — your commitment is the clock, not your birthday.</p>
+                        <p>At 20 years you receive two things immediately:</p>
+                        <ul>
+                            <li><strong>$20,000 equity payout</strong> — your accumulated internal capital account, paid as a lump sum on the day you complete 20 years.</li>
+                            <li><strong>~$2,500/month pension</strong> — begins immediately, funded by your assigned AV unit in the fleet.</li>
+                        </ul>
+                        <p>If you complete fewer than 20 years, partial vesting applies: 3–5 years = 25%, 5–10 years = 50%, 10–15 years = 75%, 15–19 years = 90%. If you stop membership before 3 years, no pension vesting is earned, though your $500 membership share may be redeemable.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        Is the pension transferable to my family?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Yes, with conditions based on years of service:</strong></p>
+                        <div class="data-row"><span class="label">20 years — Standard pension</span><span class="value">~$2,500/mo · non-transferable</span></div>
+                        <div class="data-row"><span class="label">25 years — Enhanced pension</span><span class="value">$2,200/mo · transferable to spouse + 1 dependent (20 years)</span></div>
+                        <div class="data-row"><span class="label">30 years — Legacy pension</span><span class="value green">$3,000/mo · family for lifetime</span></div>
+                        <p style="margin-top:14px;">For a driver with a family, the 25-year tier generates an estimated $528,000 in income for surviving family members. This is designed specifically for immigrant driver families and multi-income households that depend on the driver's continued earnings.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        What protects the pension fund from being raided or misused?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The Retirement Trust is legally structured as a <strong>Qualified Trust under ERISA</strong> — the same framework that governs major pension funds in the United States. This means:</p>
+                        <ul>
+                            <li>The trust is a separate legal entity from the cooperative's operating accounts.</li>
+                            <li>Management cannot access, borrow from, or invest the trust funds in the business.</li>
+                            <li>If the cooperative itself were to face financial difficulty, the trust funds are protected from creditors.</li>
+                            <li>The trust is governed by a Joint Board of Trustees — 50% elected driver-members, 50% independent fiduciaries — who have a legal duty to the pension beneficiaries.</li>
+                        </ul>
+                        <p>Annual actuarial reviews ensure the fund remains solvent at all projected payout levels. Full transparency reports are published to all members every year.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: INSURANCE -->
+            <div class="faq-section">
+                <div class="faq-section-title">Section 3 — Insurance &amp; Protection</div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        Doesn't my personal insurance cover me while driving?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>No — and this is one of the most dangerous gaps in the current gig economy.</strong> Personal auto insurance almost universally excludes commercial driving. The moment you turn on a rideshare app, your personal policy stops covering you for liability purposes.</p>
+                        <p>Uber provides $1M liability coverage only during Periods 2 and 3 (ride accepted, passenger in car). During Period 1 — when the app is on but you're waiting for a request — their coverage is minimal ($50k/$100k) and in practice requires the driver's personal insurer to be involved first, even though personal insurers deny rideshare claims.</p>
+                        <div class="highlight-box">
+                            <strong>WeGo covers all three periods.</strong> Your membership dues fund a group commercial policy that provides primary liability coverage from the moment you turn on the app to the moment you turn it off. No gaps. No "your personal policy first" runaround.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        How does the cooperative handle insurance at scale?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>In Year 1, WeGo negotiates a group commercial liability policy with a major carrier (e.g., Progressive, Liberty Mutual) for the initial 1,000 Bay Area drivers. The $500 founding fees provide the deposit required by the insurer — typically 25–30% of the annual premium upfront.</p>
+                        <p>As the cooperative grows to 50,000+ drivers, we transition toward a <strong>Risk Retention Group (RRG)</strong> — a driver-owned insurance pool that keeps premiums inside the cooperative instead of paying profit to an outside insurer. By Year 7–10, the goal is a fully <strong>Captive Insurance Company</strong> owned by the cooperative, where any surplus from good driving years returns to the drivers as dividends.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: OWNERSHIP & GOVERNANCE -->
+            <div class="faq-section">
+                <div class="faq-section-title">Section 4 — Ownership &amp; Governance</div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        What does "driver-owned" actually mean in practice?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>WeGo is structured as a <strong>California Worker Cooperative Corporation</strong> under the state's cooperative laws. This means:</p>
+                        <ul>
+                            <li><strong>1 Member, 1 Vote.</strong> Every member has equal voting power regardless of how long they've been a member or how many rides they do. A founder with 5 years in doesn't outvote a newer member.</li>
+                            <li><strong>Board elections.</strong> The Board of Directors is elected by the driver-members. Management serves at the will of the drivers, not outside investors.</li>
+                            <li><strong>Profit sharing.</strong> At year end, surplus revenue above operating costs is distributed back to members as patronage dividends proportional to their ride activity — not held for shareholders.</li>
+                            <li><strong>No outside equity.</strong> WeGo does not sell equity to venture capital firms or outside investors. The cooperative is funded entirely by member dues and revenue.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        What happens if a founding member wants to leave?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If you leave before 3 years, the $500 founding fee is non-refundable (it was used to build the infrastructure you've been benefiting from). Any partial vesting under 3 years results in no pension entitlement.</p>
+                        <p>If you leave after vesting has begun (3+ years), you retain your partial pension rights at the applicable vesting percentage. Your internal capital account balance (accumulated equity credits) becomes redeemable at the cooperative's next annual book-value calculation.</p>
+                        <p>You cannot sell your membership share to a third party. Cooperative shares are non-transferable to non-members — they must be redeemed by the cooperative at book value. This keeps the cooperative in the hands of working drivers, not speculators.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: AUTONOMOUS VEHICLES & THE FUTURE -->
+            <div class="faq-section">
+                <div class="faq-section-title">Section 5 — Autonomous Vehicles &amp; the Future</div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        Will AVs replace WeGo's human drivers?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>No — and that's precisely the point.</strong> At Uber or Tesla, autonomous vehicles replace human workers and channel the profit to shareholders. At WeGo, the cooperative owns the AV fleet, so when a robot drives a ride, the income goes to the drivers' retirement trust — not to a CEO or a hedge fund.</p>
+                        <p>By Year 6–8, WeGo will use accumulated cooperative capital to purchase AVs in bulk (estimated $55,000 per unit). These vehicles operate 20 hours/day, net ~$4,000/month, and that income is used to fund the ~$2,500/month pensions of the human drivers who built the cooperative.</p>
+                        <div class="highlight-box">
+                            <strong>The model:</strong> Every retired human driver is matched to one AV in the fleet. That AV works 24/7 so the retired driver doesn't have to. The robot doesn't replace the human — the robot works <em>for</em> the human.
+                        </div>
+                        <p>Human drivers continue to serve the routes and passengers AVs structurally cannot handle: elderly assistance, children, medical transport, complex luggage situations, and high-trust concierge services.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        What if Waymo or Tesla floods the market before WeGo builds the AV fleet?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>This is a real risk we plan for explicitly. Our strategy against AV market disruption has three layers:</p>
+                        <ul>
+                            <li><strong>The "Complex Mile" defense.</strong> AVs excel at simple point-to-point loops. WeGo's human drivers will specialize in assisted rides, school transport, medical logistics, and other high-trust services that automated vehicles cannot provide. These are higher-margin, lower-competition segments.</li>
+                            <li><strong>Political moat.</strong> WeGo's 500,000+ driver-owners are voters in every city we operate in. We actively support local ordinances requiring that a percentage of all rideshare miles in a city be served by locally-owned cooperative entities. Multiple cities are already exploring this.</li>
+                            <li><strong>Infrastructure ownership.</strong> If Waymo floods the streets with AVs, those AVs still need to charge and be serviced. WeGo's 200 Service Hubs become the pit crew for the robot revolution. We collect infrastructure revenue from every AV on the road — including competitors' vehicles.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 6: RIDERS -->
+            <div class="faq-section">
+                <div class="faq-section-title">Section 6 — For Riders</div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        Why would I choose WeGo over Uber as a passenger?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Three reasons that matter to most riders:</p>
+                        <ul>
+                            <li><strong>Lower fares.</strong> Because WeGo keeps only 12% vs Uber's 55%, we can charge passengers 15–20% less per ride while paying drivers more. No cross-subsidy needed — the math works because we removed the profit layer going to Wall Street.</li>
+                            <li><strong>No surge pricing. Ever.</strong> WeGo's fares are flat. A ride from SFO to San Francisco costs the same at 8 AM and at 11 PM on New Year's Eve. You will never be punished for needing a ride at a busy moment.</li>
+                            <li><strong>Driver quality.</strong> WeGo drivers are owner-operators with a stake in the cooperative's reputation. A driver who owns the company has more reason to give an excellent ride than a contractor who will be replaced by an algorithm tomorrow.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggle(this)">
+                        When will the app be available?
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The WeGo driver and rider app will launch in the Bay Area once the founding 1,000 driver-members are enrolled and the CPUC TNC license is issued. We are currently in the founding member enrollment phase.</p>
+                        <p>Join the contact list to be notified when the rider app goes live in your area. Drivers who enroll during the pre-launch phase are credited with vesting time from the day their membership is confirmed — you don't lose time waiting for the app.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="faq-cta">
+        <div class="container">
+            <h2>Still Have Questions?</h2>
+            <p>Our team is made up of active drivers. Reach out directly and someone who drives for a living will answer you — not a support bot.</p>
+            <a href="contact.html" class="btn-white">Contact Us</a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="mega-footer">
+    <div class="container">
+        <div class="footer-brand">
+            <h2>WeGo</h2>
+            <a href="contact.html" class="help-link">Visit Help Center</a>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>The Cooperative</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="features.html">The 15% Model</a></li>
+                    <li><a href="faq.html">Driver FAQ</a></li>
+                    <li><a href="contact.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="services.html">Local Rides</a></li>
+                    <li><a href="services.html">Secure School Transport</a></li>
+                    <li><a href="services.html">Medical Logistics</a></li>
+                    <li><a href="services.html">Corporate Accounts</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Member-Owners</h4>
+                <ul>
+                    <li><a href="faq.html">Driver FAQ</a></li>
+                    <li><a href="features.html">The Loyalty Ladder</a></li>
+                    <li><a href="features.html">Pension Details</a></li>
+                    <li><a href="contact.html">Join the Waitlist</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-apps">
+            <span style="font-size:14px; color:#aaa; padding:8px 0; display:block;">📱 App launching with the Bay Area rollout — join the waitlist to be notified first.</span>
+        </div>
+        <div class="footer-meta">
+            <div class="meta-left">
+                <div class="social-icons">
+                    <a href="https://x.com/" target="_blank" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+                <div class="locale-info">
+                    <span>🌐 English</span>
+                    <span>📍 Santa Clara, CA</span>
+                </div>
+            </div>
+            <div class="meta-right">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Accessibility</a>
+                <p class="copyright">&copy; 2026 WeGo Cooperative. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+function toggle(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    // Close all open answers
+    document.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-question.open').forEach(b => b.classList.remove('open'));
+    // Open clicked if it was closed
+    if (!isOpen) {
+        answer.classList.add('open');
+        btn.classList.add('open');
+    }
+}
+</script>
+
+</body>
+</html>
