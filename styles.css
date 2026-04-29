@@ -1199,6 +1199,13 @@ section { padding: 80px 0; }
 .advantage-banner .adv-value { font-size: 36px; font-weight: 900; letter-spacing: -1px; font-family: 'Courier New', monospace; }
 .advantage-banner .adv-sub   { font-size: 14px; opacity: 0.75; margin-top: 2px; }
 
+/* ── FAQ UTILITY CLASSES ──────────────────────────────────────── */
+.faq-entity-desc { font-size: 14px; color: var(--text-soft); margin: 4px 0 14px; }
+.faq-p-top       { margin-top: 12px; }
+.faq-footnote    { font-size: 13px; color: var(--text-soft); margin-top: 8px; }
+.data-row-gap    { margin-top: 8px; }
+.data-row-sep    { border-top: 2px solid var(--border-ui); margin-top: 8px; padding-top: 8px; }
+
 /* ── BREAK-EVEN NOTE ──────────────────────────────────────────── */
 .breakeven-note { display: flex; align-items: flex-start; gap: 10px; background: var(--surface-sunken); border: 1px solid var(--border-ui); border-left: 4px solid var(--status-warn-fg); border-radius: 12px; padding: 14px 18px; font-size: 13px; color: var(--fg-soft); line-height: 1.6; margin-top: 12px; }
 .breakeven-note .breakeven-icon { flex-shrink: 0; font-size: 16px; margin-top: 1px; }
