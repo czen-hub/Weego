@@ -1898,3 +1898,55 @@ section { padding: 80px 0; }
   line-height: 1.65;
   margin: 0;
 }
+
+/* ── SPOT COUNTER STRIP (index.html founding CTA) ───────────── */
+.spot-counter-strip {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 28px auto 0;
+  max-width: 480px;
+  text-align: left;
+}
+.scs-top {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.scs-num {
+  font-size: 42px;
+  font-weight: 900;
+  font-family: 'Courier New', monospace;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.scs-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.scs-bar-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  height: 7px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.scs-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.85);
+  width: 4.2%;
+  transition: width 1s ease;
+}
+.scs-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── FOUNDING CTA BUTTONS ────────────────────────────────────── */
+.founding-cta-buttons {
+  margin-top: 32px;
+}
